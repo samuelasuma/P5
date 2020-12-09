@@ -23,7 +23,7 @@ public class MancalaController extends HttpServlet {
 	 */
 	public MancalaController() {
 		super();
-		// TODO Auto-generated constructor stub
+	
 	}
 
 	/**

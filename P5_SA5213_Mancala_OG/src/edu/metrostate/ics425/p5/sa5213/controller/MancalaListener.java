@@ -17,7 +17,7 @@ public class MancalaListener implements HttpSessionListener {
      * Default constructor. 
      */
     public MancalaListener() {
-        // TODO Auto-generated constructor stub
+       
     }
 
 	/**
