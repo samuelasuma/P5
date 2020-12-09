@@ -74,9 +74,9 @@
 			<c:when test="${cala.gameOver(cala.pits)}">
 				<c:choose>
 					<c:when
-						test="${cala.gameOver(cala.pits)== 'One' ||  cala.gameOver(cala.pits) == 'Two'}">
+						test="${cala.winner(cala.gameOver(cala.pits)) == 'One' || cala.winner(cala.gameOver(cala.pits))== 'Two'}">
 				
-						${cala.winner(cala.gameOver(cala.pits))} Won!
+						Player ${cala.winner(cala.gameOver(cala.pits))} Won!
 						</c:when>
 					<c:otherwise>
 						<p class="draw">Draw!</p>	

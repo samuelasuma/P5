@@ -51,6 +51,7 @@ public class MancalaController extends HttpServlet {
 			request.setAttribute("pits", cala.getPits());
 
 			request.setAttribute("currentplayer", cala.getCurrentPlayer(pos));
+			log(cala.winner(cala.gameOver(cala.getPits())) + " ");
 
 		}
 		request.getRequestDispatcher("index.jsp").forward(request, response);

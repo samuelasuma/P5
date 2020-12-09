@@ -17,7 +17,7 @@ public class Mancala implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	enum player {
-		One, Two, Draw
+		One, Two
 	}
 
 	private static final int PLAYER_TWO_BANK = 13;
@@ -49,7 +49,7 @@ public class Mancala implements Serializable {
 			this.pits[pitIndex]++;
 
 		}
-		
+
 	}
 
 	public void setPits(int index, int val) {
@@ -75,33 +75,40 @@ public class Mancala implements Serializable {
 	}
 
 	public boolean gameOver(int[] pits) {
-		for (int i = 0; i < pits.length; i++) {
-			if (i == PLAYER_ONE_BANK || i == PLAYER_TWO_BANK) {
-				continue;
-			}else if (pits[i] != 0) {
-				return false;
+		int emptyPitPlayerOne = 0;
+		int emptyPitPlayerTwo = 0;
+		int pitsPerRow = 6;
+
+		for (int i = 0; i < PLAYER_ONE_BANK; i++) {
+			if (pits[i] == 0) {
+				emptyPitPlayerOne++;
 			}
-				
-			
 		}
-		return true;
+		for (int i = PLAYER_ONE_BANK + 1; i < PLAYER_TWO_BANK; i++) {
+			if (pits[i] == 0) {
+				emptyPitPlayerTwo++;
+			}
+		}
+		if (emptyPitPlayerOne == pitsPerRow || emptyPitPlayerTwo== pitsPerRow ) {
+			return true;
+		}
+		return false;
 	}
-	
+
 	public player winner(boolean gameOver) {
-		
+
 		if (gameOver) {
 			int playerOneScore = pits[PLAYER_ONE_BANK];
 			int playerTwoScore = pits[PLAYER_TWO_BANK];
 			if (playerOneScore > playerTwoScore) {
 				return player.One;
-			}else if (playerOneScore < playerTwoScore) {
+			} else if (playerOneScore < playerTwoScore) {
 				return player.Two;
 			}
-			
+
 		}
 		return null;
-	
-		
+
 	}
 
 	public void reset() {
@@ -109,7 +116,7 @@ public class Mancala implements Serializable {
 		Arrays.fill(pits, 4);
 		pits[6] = 0;
 		pits[13] = 0;
-		
+
 	}
 
 }
