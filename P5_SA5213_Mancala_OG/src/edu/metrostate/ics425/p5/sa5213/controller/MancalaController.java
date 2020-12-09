@@ -1,7 +1,6 @@
 package edu.metrostate.ics425.p5.sa5213.controller;
 
 import java.io.IOException;
-import java.util.Arrays;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
