@@ -33,7 +33,7 @@
 						<div class="pit">
 						
 							<button type="submit" name="pit_index" value="${status.index}"
-								class="pit_btn" >
+								class="pit_btn" ${cala.rowOneBlocked() ? 'disabled' : '' }>
 								<p>${pit}</p>
 							</button>
 						
@@ -51,7 +51,7 @@
 
 						<div class="pit">
 							<button name="pit_index" type="submit" value="${status.index}"
-								class="pit_btn" >
+								class="pit_btn" ${cala.rowTwoBlocked() ? 'disabled' : '' }>
 								<p>${pit}</p>
 							</button>
 						</div>
