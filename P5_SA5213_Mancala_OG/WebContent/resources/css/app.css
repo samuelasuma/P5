@@ -36,8 +36,8 @@ h1 {
     flex-flow: row;
     border: 1px solid #bbb;
     box-shadow: 0 0 5px #bbb;
-    width: 930px;
-    height: 235px;
+    width: 78%;
+    height: 48%;
     max-width: 100%;
     resize: both;
     overflow-x: auto;
@@ -133,45 +133,68 @@ h1 {
     cursor:pointer
 }
 
-.player-two .pit, .store.player-two, [data-player="Two"] .status {
+.player-two .pit, .store.player-two, [data-player="Two"] .status .current-player{
     color:green
 }
 
-.player-one .pit, .store.player-one, [data-player="One"] .status {
+.player-one .pit, .store.player-one, [data-player="One"] .status .current-player{
     color:#0074d9
 }
 .draw{
 	color:grey
 }
 
+
+
+
  button {
     cursor: pointer;
-    padding: 7px 13px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+    padding: 30px 30px;
+    border: none !important;
     color: #555;
-    background: #f7f7f7;
-    box-shadow:inset 0 1px 0 #fff, 0 1px 0 rgba(0, 0, 0, .08)
+    background: transparent;
+ 
+    
+     
 }
 
-button:hover {
-    background: #fafafa;
-    color: #23282d
+#new-game button{
+	cursor: pointer;
+	padding: 7px 13px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	color: #555;
+	background: #f7f7f7;
+	box-shadow: inset 0 1px 0 #fff, 0 1px 0 rgba( 0, 0, 0, 0.08 );
+
+	
 }
+
+#new-game button:hover {
+		background: #fafafa;
+		color: #23282d;
+	}
 
 .pit_btn button{
 	
-	border: none;
-    background-color: transparent;
-    outline: none;
+	 background: transparent;
+     border: none !important;
 }
 
-.marbles {
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  background-color:red;
+
+.ball {
+	display:inline-grid;
+	width: 20px;
+	height: 20px;
+	margin: 3px auto 0;
+	border-radius: 50%;
+	background: radial-gradient(circle at 65% 15%, white 1px, blue 3%, blue 60%, blue 100%);
+	transform: rotate(20deg);
+    
 }
+
+
+
 
 
 

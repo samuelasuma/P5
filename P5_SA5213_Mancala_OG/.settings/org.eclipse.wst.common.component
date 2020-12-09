@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="P5_SA5213_Mancala_OG">
+        
+    <wb-module deploy-name="P5_SA5213_Mancala">
+                
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+                
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="P5_SA5213_Mancala_OG"/>
-        <property name="java-output-path" value="/P5_SA5213_Mancala_OG/build/classes"/>
+                
+        <property name="java-output-path" value="/P5_SA5213_Mancala/build/classes"/>
+        <property name="context-root" value="P5_SA5213_Mancala"/>
+            
     </wb-module>
+    
 </project-modules>

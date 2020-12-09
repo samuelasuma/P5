@@ -32,9 +32,12 @@
 
 						<div class="pit">
 						
-							<button type="submit" name="pit_index" value="${status.index}"
+							<button type="submit" name="pit_index" title="${pit}" value="${status.index}"
 								class="pit_btn" ${cala.rowOneBlocked() ? 'disabled' : '' }>
-								<p>${pit}</p>
+								<c:forEach items="${cala.pits}" var="pit" begin="1" end="${pit}"
+						varStatus="status">
+								<div class="ball" > </div>
+									</c:forEach>
 							</button>
 						
 							
@@ -50,9 +53,12 @@
 
 
 						<div class="pit">
-							<button name="pit_index" type="submit" value="${status.index}"
-								class="pit_btn" ${cala.rowTwoBlocked() ? 'disabled' : '' }>
-								<p>${pit}</p>
+							<button name="pit_index" type="submit" title="${pit}"value="${status.index}"
+								class="pit_btn" id="pit_button" ${cala.rowTwoBlocked() ? 'disabled' : '' }>
+								<c:forEach items="${cala.pits}" var="pit" begin="1" end="${pit}"
+						varStatus="status">
+								<div class="ball" > </div>
+									</c:forEach>
 							</button>
 						</div>
 
@@ -93,7 +99,7 @@
 	</p>
 
 <form action="<c:url value='MancalaController'/>">
-	<button class="new-game" name="reset"
+	<button class="new-game" id="new-game" name="reset"
 						type="submit">New Game</button>
 						</form>
 	
