@@ -37,9 +37,10 @@ public class MancalaController extends HttpServlet {
 
 		String position = request.getParameter("pit_index");
 		String reset = request.getParameter("reset");
-
+		System.out.println(reset +"");
 		if (reset != null) {
-			cala.reset();
+			request.getSession().invalidate();
+			
 		}
 
 		int pos = 0;
@@ -52,7 +53,7 @@ public class MancalaController extends HttpServlet {
 
 			request.setAttribute("currentplayer", cala.getCurrentPlayer(pos));
 			log(cala.winner(cala.gameOver(cala.getPits())) + " ");
-
+			
 		}
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 

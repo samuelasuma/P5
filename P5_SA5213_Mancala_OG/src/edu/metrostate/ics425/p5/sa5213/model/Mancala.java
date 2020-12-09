@@ -7,8 +7,7 @@ public class Mancala implements Serializable {
 
 	public Mancala() {
 		super();
-		reset();
-
+		initialize();
 	}
 
 	/**
@@ -22,14 +21,22 @@ public class Mancala implements Serializable {
 
 	private static final int PLAYER_TWO_BANK = 13;
 	private static final int PLAYER_ONE_BANK = 6;
-	boolean rowOneChecker;
-	boolean rowTwoChecker;
+	private boolean rowOneChecker;
+	private boolean rowTwoChecker;
 
-	public int pits[];
+	private int pits[];
 
 	public int[] getPits() {
 
 		return this.pits;
+	}
+	
+	public void initialize() {
+		pits = new int[14];
+		Arrays.fill(pits, 4);
+		pits[6] = 0;
+		pits[13] = 0;
+
 	}
 
 	public void moveStones(int pitIndex) {
@@ -58,12 +65,11 @@ public class Mancala implements Serializable {
 
 		if (index >= 0 && index <= 5) {
 			return player.One;
-
 		} else {
 			return player.Two;
 		}
-
 	}
+	
 	public void capture(player currentplayer, int lastMarbleIndex  ) {
 		if (currentplayer == player.One && pits[lastMarbleIndex] == 1  && 0 <= lastMarbleIndex && lastMarbleIndex <  PLAYER_ONE_BANK ) {
 			int oppositeIndex = (- lastMarbleIndex )+ 12;
@@ -135,18 +141,9 @@ public class Mancala implements Serializable {
 			} else if (playerOneScore < playerTwoScore) {
 				return player.Two;
 			}
-
 		}
 		return null;
-
 	}
 
-	public void reset() {
-		pits = new int[14];
-		Arrays.fill(pits, 4);
-		pits[6] = 0;
-		pits[13] = 0;
-
-	}
 
 }

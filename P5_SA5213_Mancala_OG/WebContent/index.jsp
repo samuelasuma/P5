@@ -92,9 +92,10 @@
 
 	</p>
 
-
+<form action="<c:url value='MancalaController'/>">
 	<button class="new-game" name="reset"
 						type="submit">New Game</button>
+						</form>
 	
 
 
